@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="this_app_name">Eva Zoom</string>
-    
+
     <string name="invite_acitivity_name">Meeting Invite Example</string>
 
     <string name="zm_rc_using_fingers_for_remote_control">Remotely control a desktop using gestures</string>

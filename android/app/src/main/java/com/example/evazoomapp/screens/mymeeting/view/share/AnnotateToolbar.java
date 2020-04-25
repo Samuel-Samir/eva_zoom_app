@@ -1,5 +1,6 @@
 package com.example.evazoomapp.screens.mymeeting.view.share;
 
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -9,18 +10,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.evazoomapp.R;
+import com.example.evazoomapp.util.AndroidAppUtil;
+
 import java.util.Random;
 
 import us.zoom.sdk.InMeetingAnnotationController;
-import us.zoom.sdk.InMeetingAnnotationController.AnnotationToolType;
 import us.zoom.sdk.ZoomSDK;
-import us.zoom.sdksample.R;
-import us.zoom.sdksample.inmeetingfunction.customizedmeetingui.AndroidAppUtil;
+import us.zoom.sdk.InMeetingAnnotationController.AnnotationToolType;
 
 public class AnnotateToolbar extends FrameLayout implements IColorChangedListener, View.OnClickListener{
 	private ToolbarDragView mView;
@@ -123,7 +124,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 
 		mToolbars = mView.findViewById(R.id.drawingtools);
 		mToolbars.setVisibility(GONE);
-		
+
 		View contentView = inflate(getContext(), R.layout.annocolorlayout, null);
 		mColorTableView = new PopupWindow(contentView, LayoutParams.MATCH_PARENT, AndroidAppUtil.dip2px(context, 100));
 		mColorTable = (ColorTable) contentView.findViewById(R.id.colorTable);
@@ -136,7 +137,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 
 		mAnnotationController = ZoomSDK.getInstance().getInMeetingService().getInMeetingAnnotationController();
 		mLineWidthSeekBar = (SeekBar) contentView.findViewById(R.id.seekbar);
-		mLineWidthSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+		mLineWidthSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 			@Override
 			public void onStopTrackingTouch(SeekBar arg0) {
@@ -177,7 +178,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		mLineWidth = 2;
 
 		setRandomColor();
-		mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_PEN);
+		mAnnotationController.setToolType(InMeetingAnnotationController.AnnotationToolType.ANNO_TOOL_TYPE_PEN);
 		updateSelection(mPen);
 		mArrow.setVisibility(mAnnotationController.isPresenter() ? GONE : VISIBLE);
 		mSpotlight.setVisibility(mAnnotationController.isPresenter() ? VISIBLE : GONE);
@@ -189,7 +190,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 
 		mAnnotationController.stopAnnotation();
 
-		mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_PEN);
+		mAnnotationController.setToolType(InMeetingAnnotationController.AnnotationToolType.ANNO_TOOL_TYPE_PEN);
 		updateSelection(mPen);
 		if(null != mColorTableView && mColorTableView.isShowing())
 			mColorTableView.dismiss();
@@ -197,7 +198,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		if(null != mSaveTableView && mSaveTableView.isShowing())
 			mSaveTableView.dismiss();
 	}
-	
+
 	private void updateSelection(View v) {
 		if(null == v)
 			return;
@@ -209,7 +210,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		mArrow.setSelected(false);
 		v.setSelected(true);
 	}
-	
+
 	//set annoTool
 	@Override
 	public void onClick(View v)
@@ -219,29 +220,29 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		if (v == mSpotlight)
 		{
 			mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_SPOTLIGHT);
-		} 
-		else if (v == mPen) 
+		}
+		else if (v == mPen)
 		{
 			mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_PEN);
-		} 
+		}
 		else if (v == mHighlight)
 		{
 			mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_HIGHLIGHTER);
-		} 
-		else if (v == mErase) 
+		}
+		else if (v == mErase)
 		{
 			mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_ERASER);
 		} else if(v == mArrow)
 		{
 			mAnnotationController.setToolType(AnnotationToolType.ANNO_TOOL_TYPE_AUTO_ARROW2);
 		}
-		else if (v == mColorIndicator) 
+		else if (v == mColorIndicator)
 		{
 			if (mColorTableView.isShowing())
 			{
 				mColorTableView.dismiss();
 			}
-			else 
+			else
 			{
 				mColorTableView.showAsDropDown(mToolbars);
 				updateLineWidthPromt();
@@ -261,7 +262,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 
 		updateSelection(v);
 	}
-	
+
 	private void updateLineWidthPromt()
 	{
 		if (mColorTableView.isShowing())
@@ -300,7 +301,7 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		}
 	}
 
-    private void setRandomColor()
+	private void setRandomColor()
 	{
 		Random rand = new Random();
 		int index = rand.nextInt(9);
@@ -340,14 +341,14 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 		@SuppressWarnings("deprecation")
 		@Override
 		public boolean onScroll(MotionEvent e1, MotionEvent e2,
-                                float distanceX, float distanceY) {
+								float distanceX, float distanceY) {
 			if(mView == null || mView.getParent() == null ){
 				return true;
 			}
 
 			//hide color Table
 			if(mColorTableView==null)
-					return true;
+				return true;
 			if(mColorTableView.isShowing())
 			{
 				mColorTableView.dismiss();

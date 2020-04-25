@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+
+import com.example.evazoomapp.screens.init.InitAuthSDKActivity;
+
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.plugin.common.MethodCall;
@@ -22,7 +25,7 @@ public class MainActivity extends FlutterActivity {
               @Override
               public void onMethodCall(MethodCall call, MethodChannel.Result result) {
                   if (call.method.equals("zoom")){
-                      Intent myIntent = new Intent(MainActivity.this, TestActivity.class);
+                      Intent myIntent = new Intent(MainActivity.this, InitAuthSDKActivity.class);
 
                       startActivity(myIntent);
                   }

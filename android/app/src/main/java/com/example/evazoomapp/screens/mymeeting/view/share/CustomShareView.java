@@ -13,10 +13,11 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.evazoomapp.R;
+
 import us.zoom.sdk.InMeetingRemoteController;
 import us.zoom.sdk.MobileRTCVideoView;
 import us.zoom.sdk.ZoomSDK;
-import us.zoom.sdksample.R;
 
 public class CustomShareView extends FrameLayout implements RCFloatView.IRemoteControlButtonStatusListener, RCMouseView.MouseListener {
 

@@ -1,5 +1,6 @@
 package com.example.evazoomapp.screens.mymeeting.view.share;
 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,8 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import us.zoom.androidlib.util.AndroidAppUtil;
-
+import com.example.evazoomapp.util.AndroidAppUtil;
 
 public class ColorTable extends View {
 	public final static int COLOR_ALPHA = 255;
