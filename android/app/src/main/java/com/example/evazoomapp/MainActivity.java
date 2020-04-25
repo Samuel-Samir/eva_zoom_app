@@ -23,7 +23,7 @@ public class MainActivity extends FlutterActivity {
               public void onMethodCall(MethodCall call, MethodChannel.Result result) {
                   if (call.method.equals("zoom")){
                       Intent myIntent = new Intent(MainActivity.this, TestActivity.class);
-                      
+
                       startActivity(myIntent);
                   }
 
