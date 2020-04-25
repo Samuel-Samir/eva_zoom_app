@@ -228,9 +228,7 @@ public class LoginUserStartJoinMeetingActivity extends Activity implements AuthC
     }
 
     public void onClickBtnPreMeeting(View view) {
-        //samuellol
-//        Intent intent = new Intent(this, PreMeetingExampleActivity.class);
-//        startActivity(intent);
+
     }
 
     public void onClickBtnLogout(View view) {
@@ -241,9 +239,7 @@ public class LoginUserStartJoinMeetingActivity extends Activity implements AuthC
     }
 
     public void onClickSettings(View view) {
-        //samuellol
-//        Intent intent = new Intent(this, MeetingSettingActivity.class);
-//        startActivity(intent);
+//        samuel
     }
 
     @Override
