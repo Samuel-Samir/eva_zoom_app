@@ -24,11 +24,11 @@ public class MainActivity extends FlutterActivity {
             new MethodChannel.MethodCallHandler() {
               @Override
               public void onMethodCall(MethodCall call, MethodChannel.Result result) {
-                  if (call.method.equals("zoom")){
-                      Intent myIntent = new Intent(MainActivity.this, InitAuthSDKActivity.class);
+                if (call.method.equals("zoom")){
+                  Intent myIntent = new Intent(MainActivity.this, InitAuthSDKActivity.class);
 
-                      startActivity(myIntent);
-                  }
+                  startActivity(myIntent);
+                }
 
 
               }

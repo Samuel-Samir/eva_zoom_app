@@ -12,10 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.evazoomapp.R;
-import com.example.evazoomapp.screens.emailuserlogin.EmailUserLoginActivity;
-import com.example.evazoomapp.screens.init.InitAuthSDKCallback;
-import com.example.evazoomapp.screens.init.InitAuthSDKHelper;
 import com.example.evazoomapp.joinmeeting.UserLoginCallback;
+import com.example.evazoomapp.screens.emailuserlogin.EmailUserLoginActivity;
 import com.example.evazoomapp.screens.mymeeting.MyMeetingActivity;
 import com.example.evazoomapp.screens.startjoinmeeting.LoginUserStartJoinMeetingActivity;
 import com.example.evazoomapp.screens.startjoinmeeting.RawDataMeetingActivity;

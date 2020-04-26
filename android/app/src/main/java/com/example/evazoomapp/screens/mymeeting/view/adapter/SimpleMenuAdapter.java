@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
 public class SimpleMenuAdapter extends BaseAdapter {
     private List<SimpleMenuItem> mList = new ArrayList<SimpleMenuItem>();
     private Context mContext;

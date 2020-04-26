@@ -32,7 +32,7 @@ public class EmailLoginUserStartMeetingHelper {
             return ret;
         }
 
-        StartMeetingOptions opts =ZoomMeetingUISettingHelper.getStartMeetingOptions();
+        StartMeetingOptions opts = ZoomMeetingUISettingHelper.getStartMeetingOptions();
         opts.no_video=false;
 
         StartMeetingParams4NormalUser params = new StartMeetingParams4NormalUser();

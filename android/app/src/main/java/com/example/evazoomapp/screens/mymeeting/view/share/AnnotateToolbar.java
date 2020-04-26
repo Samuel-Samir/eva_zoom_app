@@ -20,8 +20,8 @@ import com.example.evazoomapp.util.AndroidAppUtil;
 import java.util.Random;
 
 import us.zoom.sdk.InMeetingAnnotationController;
-import us.zoom.sdk.ZoomSDK;
 import us.zoom.sdk.InMeetingAnnotationController.AnnotationToolType;
+import us.zoom.sdk.ZoomSDK;
 
 public class AnnotateToolbar extends FrameLayout implements IColorChangedListener, View.OnClickListener{
 	private ToolbarDragView mView;
@@ -248,9 +248,9 @@ public class AnnotateToolbar extends FrameLayout implements IColorChangedListene
 				updateLineWidthPromt();
 			}
 			return;
-		}else if(v.getId()==R.id.btnUndo){
+		}else if(v.getId()== R.id.btnUndo){
 			mAnnotationController.undo();
-		}else if(v.getId()==R.id.btnRedo){
+		}else if(v.getId()== R.id.btnRedo){
 			mAnnotationController.redo();
 		}
 

@@ -1,7 +1,5 @@
 package com.example.evazoomapp.screens.startjoinmeeting;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -263,7 +261,7 @@ public class LoginUserStartJoinMeetingActivity extends Activity implements AuthC
     }
 
     private void refreshUI() {
-        if(null==ZoomSDK.getInstance().getMeetingService())
+        if(null== ZoomSDK.getInstance().getMeetingService())
         {
             return;
         }

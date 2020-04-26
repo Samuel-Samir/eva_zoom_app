@@ -50,7 +50,7 @@ public class JoinMeetingHelper {
             return ret;
         }
 
-        JoinMeetingOptions opts =ZoomMeetingUISettingHelper.getJoinMeetingOptions();
+        JoinMeetingOptions opts = ZoomMeetingUISettingHelper.getJoinMeetingOptions();
         JoinMeetingParams params = new JoinMeetingParams();
         params.displayName = DISPLAY_NAME;
         params.vanityID = vanityId;

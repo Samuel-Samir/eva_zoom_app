@@ -1,8 +1,8 @@
 package com.example.evazoomapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import us.zoom.sdk.ZoomSDKInitializeListener;
 

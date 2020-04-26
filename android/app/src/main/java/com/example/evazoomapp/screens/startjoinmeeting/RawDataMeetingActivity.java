@@ -1,12 +1,5 @@
 package com.example.evazoomapp.screens.startjoinmeeting;
 //
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Context;
@@ -24,6 +17,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evazoomapp.R;
 import com.example.evazoomapp.screens.mymeeting.audio.MeetingAudioHelper;
@@ -328,8 +328,8 @@ public class RawDataMeetingActivity extends FragmentActivity implements InMeetin
     MeetingAudioHelper.AudioCallBack audioCallBack = new MeetingAudioHelper.AudioCallBack() {
         @Override
         public boolean requestAudioPermission() {
-            if (Build.VERSION.SDK_INT >= 23 && checkSelfPermission(android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(RawDataMeetingActivity.this, new String[]{android.Manifest.permission.RECORD_AUDIO}, REQUEST_AUDIO_CODE);
+            if (Build.VERSION.SDK_INT >= 23 && checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(RawDataMeetingActivity.this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_AUDIO_CODE);
                 return false;
             }
             return true;
@@ -359,7 +359,7 @@ public class RawDataMeetingActivity extends FragmentActivity implements InMeetin
         public boolean requestVideoPermission() {
 
             if (Build.VERSION.SDK_INT >= 23 && checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(RawDataMeetingActivity.this, new String[]{android.Manifest.permission.CAMERA}, REQUEST_CAMERA_CODE);
+                ActivityCompat.requestPermissions(RawDataMeetingActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_CODE);
                 return false;
             }
             return true;

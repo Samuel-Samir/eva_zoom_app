@@ -1,5 +1,5 @@
-import 'package:evazoomapp/ui/SplashScreen.dart';
 import 'package:flutter/material.dart';
+import 'SplashScreen.dart';
 
 
 
